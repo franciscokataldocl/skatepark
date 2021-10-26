@@ -1,0 +1,62 @@
+{{> navigation}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.1.9/sweetalert2.min.js" integrity="sha512-I/i/QdEAXhCk1O0kmm/I/qf5nwNRv5fYAlnWVZRd+dAfYgZAKeIrIy7vlr6J1di+HauR+5bzS6m/iHoR8xRYCA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.1.9/sweetalert2.min.css" integrity="sha512-cyIcYOviYhF0bHIhzXWJQ/7xnaBuIIOecYoPZBgJHQKFPo+TOBA+BY1EnTpmM8yKDU4ZdI3UGccNGCEUdfbBqw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<div class="full-container">
+    {{> decoration}}
+    <div class="full-container-col-2">
+
+        <div class="box-content">
+            <div class="img-text-container">
+                <img class="img-text" src="img/text/admin.png" alt="">
+
+            </div>
+            <div class="card-row">
+
+                {{#each skaters}}
+
+                <div class="card">
+                    <div class="card-content">
+                        <div class="user-config animate">
+                            <div class="config-col">
+                                <img class="delete-icon animate" data-id='{{this.id}}' src="img/icons/delete-icon.png" alt="">
+                                <small>Eliminar usuario</small>
+                                
+                                <p></p>
+                            </div>
+                            <div class="config-col">
+                                <div class="switch">
+                                    <input class="checkbox"type="checkbox" id='checkbox{{this.id}}' data-id='{{this.id}}' data-status='{{this.estado}}' {{ ifEqual this.estado true "checked" " " }}/>
+                                    <label for='checkbox{{this.id}}'></label>
+                                    <small>{{ ifEqual this.estado true "Desaprobar usuario" "Aprobar usuario" }}</small>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="animate">
+                            <li class="name"> <img class="icon" src="img/icons/profile-icon.png" alt="">{{this.nombre}}
+                            </li>
+                            <li> <img class="icon" src="img/icons/mail-icon.png" alt="">{{this.email}}</li>
+                            <li> <img class="icon" src="img/icons/check-icon.png" alt="">
+                                {{ ifEqual this.estado true "aprobado" "En revisión" }}
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="overlay animate"></div>
+                    <div class="card-body bg-cover animate-slow"
+                        style="background:url('./userimages/{{this.foto}}') no-repeat center center">
+
+                    </div>
+                </div>
+
+                {{/each}}
+
+
+
+
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+<script src="/js/admin.js"></script>

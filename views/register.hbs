@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>register</title>
+      <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/estilos.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+  {{> navigation}}
+    <div class="full-container">
+  {{> decoration}}
+
+      <div class="full-container-col-2">
+          <div class="box-content">
+            <div class="img-text-container">
+              <img class="img-text" src="img/text/register.png" alt="">
+
+            </div>
+            <div class="form-container">
+                <form  id="form" class="register-form" action="/register" method="POST" enctype="multipart/form-data" >
+                  <!-- action="/register" method="POST" enctype="multipart/form-data" -->
+                    <div class="form-col-1">
+                        <div class="avatar-upload">
+                            <div class="avatar-edit">
+                                <input name="profileImage" type='file' id="imageUpload" accept=".png, .jpg, .jpeg" />
+                                <label for="imageUpload">
+                                    <img src="img/icons/edit.png" alt="">
+                                </label>
+                            </div>
+                            <div class="avatar-preview">
+                                <div id="imagePreview" style="background-image: url('img/icons/foto.jpg');">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-col-2">
+                    <input name="nombre" type="text" placeholder="Nombre" id="nombreInput">
+                    <input name="email" type="email" placeholder="Email" id="emailInput" class="">
+                    <input name="password1" type="password" placeholder="Contraseña" id="pass1">
+                    <input name="password2" type="password" placeholder="Repite contraseña" id="pass2">
+                    <select name="anios" id="aniosInput">
+                      <option value="" selected disabled hidden>Años de experiencia</option>
+                        <option value="5">1 a 5 años</option>
+                        <option value="10">5 a 10 años</option>
+                        <option value="15">10 a 15 años</option>
+                        <option value="20">15 a 20 años</option>
+                        <option value="25">20 a 25 años</option>
+                    </select>
+                    <input name="especialidad" type="text" placeholder="Especialidad" id="especialidadInput">
+                    <button  class="animate" id="submitForm" type="submit">Register</button>
+                    <span id="error" class="error"></span>
+                    </div>
+                </form>
+
+            </div>
+              
+          </div>
+      </div>
+    </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="/js/avatar-upload.js"></script>
+    <script src="/js/register.js"></script> 
+
+  </body>
+</html>

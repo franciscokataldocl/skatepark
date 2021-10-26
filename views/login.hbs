@@ -1,0 +1,25 @@
+{{> navigation}}
+<div class="full-container">
+  {{> decoration}}
+  <div class="full-container-col-2">
+    <div class="box-content">
+      <div class="img-text-container">
+        <img class="img-text" src="img/text/login.png" alt="">
+      </div>
+      <div class="form-container">
+        <form id="form" class="register-form"type="POST">
+          <div class="form-col-2">
+            <input name="email" type="email" placeholder="Email" id="email" class="">
+            <input name="password" type="password" placeholder="Contraseña" id="pass">
+            <button class="animate" id="submiLogin" type="submit">Login</button>
+            <span id="error" class="error"></span>
+          </div>
+        </form>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="/js/login.js"></script> 

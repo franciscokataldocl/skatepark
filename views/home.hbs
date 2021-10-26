@@ -1,0 +1,44 @@
+
+       
+   {{> navigation}}
+    <div class="full-container">
+      {{> decoration}}
+
+      <div class="full-container-col-2">
+          <div class="box-content">
+            <div class="img-text-container">
+              <img class="img-text" src="img/text/welcome.png" alt="">
+
+            </div>
+              <div class="card-row">
+
+
+
+
+{{#each skaters}}
+
+     <div class="card">
+                  <div class="card-content">
+                    <ul class="animate">
+                      <li class="name"> <img class="icon" src="img/icons/profile-icon.png" alt="">{{this.nombre}}</li>
+                      <li> <img class="icon"  src="img/icons/mail-icon.png" alt="">{{this.email}}</li>
+                      <li> <img class="icon"  src="img/icons/check-icon.png" alt="">
+                      {{ ifEqual this.estado true "aprobado" "En revisión" }}
+                        </li>
+                    </ul>
+                  </div>
+                  <div class="overlay animate"></div>
+                    <div class="card-body bg-cover animate-slow" style="background:url('./userimages/{{this.foto}}') no-repeat center center">
+
+                    </div>
+                </div>
+
+{{/each}}
+
+
+              
+           
+              </div>
+          </div>
+      </div>
+    </div>
